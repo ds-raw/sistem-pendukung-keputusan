@@ -2,16 +2,16 @@
 FROM python:3.7-slim
 
 # Setel direktori kerja di dalam kontainer
-WORKDIR /app
+WORKDIR ./
 
 # Copy seluruh konten dari direktori 'sistem-pendukung-keputusan' ke kontainer di '/app'
-COPY . /app
+COPY ./
 
 # Setel direktori kerja ke '/app' di dalam kontainer
-WORKDIR /app
+WORKDIR ./
 
 # Instal paket yang diperlukan yang tercantum di requirements.txt
-COPY ./requirements.txt /app/requirements.txt
+COPY ./requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Buka port 8050 agar bisa diakses dari luar kontainer
